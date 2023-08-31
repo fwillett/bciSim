@@ -56,7 +56,7 @@ function [ modelOut ] = fitPiecewiseModel( opts )
             binIdx = intersect(rIdx, find(cVecMag>binEdges(b) & cVecMag<=binEdges(b+1)));
             binStd(b) = std(noiseTimeSeries(binIdx));
         end
-        binStd(isnan(binStd)) = nanmean(binStd);
+        binStd(isnan(binStd)) = mean(binStd, "omitnan");
         stdSmoothed = filtfilt(ones(5,1)/5, 1, binStd);
 
         ts = generateNoiseFromModel( 10000, modelOut.noiseModel );
