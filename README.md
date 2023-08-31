@@ -4,7 +4,7 @@ bciSim is a set of functions for simulating, modeling and parameterizing linear 
 
 # Example scripts
 
-- To run the example scripts in the "Examples" folder, the "Sample Dataset" and "Tools" folders must be on the MATLAB path. 
+- To run the example scripts in the "Examples" folder, the "Sample Dataset" and "Tools" folders must be on the MATLAB path. Also, make sure the Add-Ons "Optimization Toolbox", "Signal Processing Toolbox", and "Statistics and Machine Learning Toolbox" are installed.
 
 - Examples\exampleFittingAndSimulations.m gives an example of how to fit the control policy model first introduced in Willett et. al 2016 ("Feedback control policies employed by people using intracortical brain-computer interfaces") to one block of closed-loop data. It also shows how to use that model to predict performance under different gain and smoothing conditions. It uses the example dataset T8.2015.03.24 (a "high gain" session where both high and low decoder gains were tested).
 
