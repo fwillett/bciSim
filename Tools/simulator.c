@@ -190,7 +190,7 @@ void nonlinIntegrate(int nElements, double *pos, double *newPos, double *vel, do
     else if(plant->nonlinType==1){
         //exponentiate the speed
         speed = euclidianNorm(vel, nElements);
-        speed = pow(speed, plant->n1);
+        speed = plant->n2 * pow(speed / plant->n2, plant->n1);
         for(j=0; j<nElements; j++){
             newPos[j] = pos[j] + loopTime * vel[j] * speed;
         }  
@@ -229,4 +229,3 @@ void nonlinIntegrate(int nElements, double *pos, double *newPos, double *vel, do
         }  
     }
 }
-
